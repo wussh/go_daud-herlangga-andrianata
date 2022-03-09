@@ -1,18 +1,7 @@
-Algoritma adalah sebuah prosedur komputasi yang didefinisikan dengan baik yang biasanya mengambil nilai sebagai input dan menghasilkan nilai sebagai output.
+Data Structure
 
-3 karakteristik algoritma : 1. algoritma memiliki sebuah batas awal dan akhir.
-			                      2. instruksi terdefinisikan dengan baik.
-			                      3. memiliki karakteristik efektif dan efisien.
-                            
-3 konsep utama algoritma : 1. sequential (perurutan)
-			                     2. branching (percabangan)
-			                     3. looping (perulangan)
-                           
-Beberapa cara untuk mempresentasikan sebuah algoritma :
-1. Pseudocode (merupakan deskripsi bahasa sederhana yang digunakan untuk menuangkan sebuah ide algoritma itu sendiri).
-2. Flowchart (merupakan suatu bagan dengan simbol tertentu yang menggambarkan urutan dan hubungan antar proses secara mendetail.) 
+Array adalah variabel yang mempunyai indeks sehingga dapat menyimpan sejumlah data yang bertipe sama.
 
-Contoh Algoritma :
-1. Check Prime Number
-2. Sorting
-3. Searching
+Slice adalah sebuah abstraksi yang dibangun di atas tipe array.
+
+Map adalah tipe data asosiatif yang ada di Go, berbentuk key-value pair. Untuk setiap data (atau value) yang disimpan, disiapkan juga key-nya.
