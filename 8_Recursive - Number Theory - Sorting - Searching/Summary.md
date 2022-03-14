@@ -1,18 +1,17 @@
-Algoritma adalah sebuah prosedur komputasi yang didefinisikan dengan baik yang biasanya mengambil nilai sebagai input dan menghasilkan nilai sebagai output.
+recursive.Recursion adalah proses pengulangan barang dengan cara yang mirip. Konsep yang sama berlaku dalam bahasa pemrograman juga. Jika suatu program memungkinkan untuk memanggil suatu fungsi di dalam fungsi yang sama, maka itu disebut panggilan fungsi rekursif. 
 
-3 karakteristik algoritma : 1. algoritma memiliki sebuah batas awal dan akhir.
-			                      2. instruksi terdefinisikan dengan baik.
-			                      3. memiliki karakteristik efektif dan efisien.
-                            
-3 konsep utama algoritma : 1. sequential (perurutan)
-			                     2. branching (percabangan)
-			                     3. looping (perulangan)
-                           
-Beberapa cara untuk mempresentasikan sebuah algoritma :
-1. Pseudocode (merupakan deskripsi bahasa sederhana yang digunakan untuk menuangkan sebuah ide algoritma itu sendiri).
-2. Flowchart (merupakan suatu bagan dengan simbol tertentu yang menggambarkan urutan dan hubungan antar proses secara mendetail.) 
+number theory
+-factorial
+-prime number
+-greatest common divisor
+-least common multiple
 
-Contoh Algoritma :
-1. Check Prime Number
-2. Sorting
-3. Searching
+searching.Searching adalah menemukan nilai (data) tertentu di dalam sekumpulan data yang bertipe sama (baik bertipe dasar atau bertipe bentukan). Search algoritma adalah algoritma yang menerima perintah A dan mencoba untuk mencari record yang mana keynya adalah A. Setelah proses pencarian dilaksanakan, akan diperoleh salah satu dari dua kemungkinan, yaitu data yang dicari ditemukan (successful) atau tidak ditemukan (unsuccessfull).
+-liniear search O(n)
+-builtins search
+
+sorting. Sorting adalah suatu proses penyusunan kembali kumpulan objek menggunakan tata aturan tertentu. Sorting disebut juga sebagai suatu algoritma untuk meletakkan kumpulan elemen data ke dalam urutan tertentu berdasarkan satu atau beberapa kunci dalam tiap-tiap elemen. Pengurutan atau sorting merupakan proses dasar yang ada dalam sebuah algoritma dan struktur data.
+
+-selection sort O(n^2)
+-counting sort O(n+k)
+-merge sort O(log n)
