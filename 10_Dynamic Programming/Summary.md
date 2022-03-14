@@ -1,18 +1,3 @@
-Algoritma adalah sebuah prosedur komputasi yang didefinisikan dengan baik yang biasanya mengambil nilai sebagai input dan menghasilkan nilai sebagai output.
+Dynamic Programming (selanjutnya disebut “DP” saja) merupakan salah satu teknik perancangan algoritma yang dikembangkan untuk menyelesaikan permasalahan yang sangat kompleks dengan memecah permasalahan tersebut menjadi banyak sub-permasalahan.
 
-3 karakteristik algoritma : 1. algoritma memiliki sebuah batas awal dan akhir.
-			                      2. instruksi terdefinisikan dengan baik.
-			                      3. memiliki karakteristik efektif dan efisien.
-                            
-3 konsep utama algoritma : 1. sequential (perurutan)
-			                     2. branching (percabangan)
-			                     3. looping (perulangan)
-                           
-Beberapa cara untuk mempresentasikan sebuah algoritma :
-1. Pseudocode (merupakan deskripsi bahasa sederhana yang digunakan untuk menuangkan sebuah ide algoritma itu sendiri).
-2. Flowchart (merupakan suatu bagan dengan simbol tertentu yang menggambarkan urutan dan hubungan antar proses secara mendetail.) 
-
-Contoh Algoritma :
-1. Check Prime Number
-2. Sorting
-3. Searching
+Secara sederhana, teknik DP dapat dikatakan adalah sebuah teknik brute force yang pintar. Kita memecah-mecah masalah menjadi sub-masalah, dan menyelesaikan seluruh sub-masalah tersebut. Perbedaan utama dari DP dengan D&C adalah DP melakukan penyimpanan hasil penyelesaian sub-masalah sehingga kita tidak perlu menyelesaikan sub-masalah yang sama berulang kali.
