@@ -1,18 +1,9 @@
-Algoritma adalah sebuah prosedur komputasi yang didefinisikan dengan baik yang biasanya mengambil nilai sebagai input dan menghasilkan nilai sebagai output.
+brute force adalah sebuah pendekatan yang mudah untuk memecahkan suatu masalah, biasanya didasarkan langsung pada pernyataan masalah dan definisi konsep yang dilibatkan. Algoritma ini memecahkan masalah dengan sangat sederhana, langsung, dan dengan cara yang cukup jelas.
 
-3 karakteristik algoritma : 1. algoritma memiliki sebuah batas awal dan akhir.
-			                      2. instruksi terdefinisikan dengan baik.
-			                      3. memiliki karakteristik efektif dan efisien.
-                            
-3 konsep utama algoritma : 1. sequential (perurutan)
-			                     2. branching (percabangan)
-			                     3. looping (perulangan)
-                           
-Beberapa cara untuk mempresentasikan sebuah algoritma :
-1. Pseudocode (merupakan deskripsi bahasa sederhana yang digunakan untuk menuangkan sebuah ide algoritma itu sendiri).
-2. Flowchart (merupakan suatu bagan dengan simbol tertentu yang menggambarkan urutan dan hubungan antar proses secara mendetail.) 
+greedy merupakan jenis algoritma yang menggunakan pendekatan penyelesaian masalah dengan mencari nilai maksimum sementara pada setiap langkahnya.
 
-Contoh Algoritma :
-1. Check Prime Number
-2. Sorting
-3. Searching
+Algoritma Divide and Conquer merupakan algoritma yang sangat populer di dunia Ilmu Komputer. Divide and Conquer merupakan algoritma yang berprinsip memecah-mecah permasalahan yang terlalu besar menjadi beberapa bagian kecil sehingga lebih mudah untuk diselesaikan. Langkah-langkah umum algoritma Divide and Conquer :
+
+Divide : Membagi masalah menjadi beberapa upa-masalah yang memiliki kemiripan dengan masalah semula namun berukuran lebih kecil ( idealnya berukuran hampir sama ).
+Conquer : Memecahkan ( menyelesaikan ) masing-masing upa-masalah ( secara rekursif ).
+Combine : Menggabungkan solusi masing-masing upa-masalah sehingga  membentuk solusi masalah semula.
