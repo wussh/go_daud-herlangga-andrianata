@@ -1,0 +1,2 @@
+CONSTRAINT id FOREIGN KEY (`id`) REFERENCES `product` (`id`),
+CONSTRAINT id FOREIGN KEY (`id`) REFERENCES `user` (`id`)
