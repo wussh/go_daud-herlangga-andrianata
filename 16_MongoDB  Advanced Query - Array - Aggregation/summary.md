@@ -1,5 +1,7 @@
 use test //membuat database
+
 db.createCollection ('name') //membuat collection
+
 db.products.insertMany([{
     _id:"type1",
     operator_id:3,
