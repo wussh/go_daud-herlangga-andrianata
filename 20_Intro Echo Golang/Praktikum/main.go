@@ -34,15 +34,24 @@ func GetUserController(c echo.Context) error {
 	return c.JSON(http.StatusOK, finduser)
 }
 
-// // delete user by id
-// func DeleteUserController(c echo.Context) error {
-// 	// your solution here
-// }
+// delete user by id
+func DeleteUserController(c echo.Context) error {
+	ID, _ := strconv.Atoi(c.Param("id"))
+	deleteduser := map[int]*User{}
+	delete(deleteduser, ID)
+	return c.JSON(http.StatusOK, deleteduser)
+}
 
-// // update user by id
-// func UpdateUserController(c echo.Context) error {
-// 	// your solution here
-// }
+// update user by id
+func UpdateUserController(c echo.Context) error {
+	u := new(User)
+	if err := c.Bind(u); err != nil {
+		return err
+	}
+	id, _ := strconv.Atoi(c.Param("id"))
+	users[id].Name = u.Name
+	return c.JSON(http.StatusOK, users[id])
+}
 
 // create new user
 func CreateUserController(c echo.Context) error {
