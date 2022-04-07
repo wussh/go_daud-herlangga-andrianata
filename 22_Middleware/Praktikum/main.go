@@ -54,6 +54,14 @@ func GetUsers(c echo.Context) error {
 	return c.JSON(http.StatusOK, users)
 }
 
+func GetBooks(c echo.Context) error {
+	var books []Book
+	if err := DB.Find(&books).Error; err != nil {
+		return c.String(http.StatusInternalServerError, "Internal Server Error")
+	}
+	return c.JSON(http.StatusOK, books)
+}
+
 func CreateUser(c echo.Context) error {
 	user := User{}
 	if err := c.Bind(&user); err != nil {
@@ -87,6 +95,21 @@ func GetUser(c echo.Context) error {
 	return c.JSON(http.StatusOK, users)
 }
 
+func GetBook(c echo.Context) error {
+	bookId, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		return c.String(http.StatusBadRequest, "invalid id")
+	}
+	var books Book
+	if err := DB.First(&books, bookId).Error; err != nil {
+		return c.String(http.StatusInternalServerError, "internal server error")
+	}
+	if books.ID == 0 {
+		return c.String(http.StatusNotFound, "user not found")
+	}
+	return c.JSON(http.StatusOK, books)
+}
+
 func UpdateUser(c echo.Context) error {
 	userId, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
@@ -108,6 +131,27 @@ func UpdateUser(c echo.Context) error {
 	return c.JSON(http.StatusOK, users)
 }
 
+func UpdateBook(c echo.Context) error {
+	bookId, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		return c.String(http.StatusBadRequest, "invalid id")
+	}
+	var books Book
+	if err := DB.First(&books, bookId).Error; err != nil {
+		return c.String(http.StatusInternalServerError, "internal server error")
+	}
+	if books.ID == 0 {
+		return c.String(http.StatusNotFound, "user notfound")
+	}
+	if err := c.Bind(&books); err != nil {
+		return c.String(http.StatusInternalServerError, "internal server error")
+	}
+	if err := DB.Save(&books); err != nil {
+		return c.String(http.StatusInternalServerError, "internal server error")
+	}
+	return c.JSON(http.StatusOK, books)
+}
+
 func DeleteUser(c echo.Context) error {
 	userId, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
@@ -126,6 +170,24 @@ func DeleteUser(c echo.Context) error {
 	return c.JSON(http.StatusOK, users)
 }
 
+func DeleteBook(c echo.Context) error {
+	bookId, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		return c.String(http.StatusInternalServerError, "internal server error")
+	}
+	var books Book
+	if err := DB.First(&books, bookId).Error; err != nil {
+		return c.String(http.StatusInternalServerError, "internal server error")
+	}
+	if books.ID == 0 {
+		return c.String(http.StatusNotFound, "user not found")
+	}
+	if err := DB.Delete(&books, bookId).Error; err != nil {
+		return c.String(http.StatusInternalServerError, "internal server error")
+	}
+	return c.JSON(http.StatusOK, books)
+}
+
 func initDb() {
 	initDBforUser()
 
@@ -135,28 +197,31 @@ func userhandler() {
 	e := echo.New()
 	e.POST("/users/", CreateUser)
 	e.GET("/users/", GetUsers, middleware.JWT([]byte(secretJwt)))
-	e.GET("/users/:id", GetUser)
-	e.PUT("/users/:id", UpdateUser)
-	e.DELETE("/users/:id", DeleteUser)
+	e.GET("/users/:id", GetUser, middleware.JWT([]byte(secretJwt)))
+	e.PUT("/users/:id", UpdateUser, middleware.JWT([]byte(secretJwt)))
+	e.DELETE("/users/:id", DeleteUser, middleware.JWT([]byte(secretJwt)))
 	e.Start(":8080")
 }
 
-func bookhandler() {
-	// e:=echo.New()
-	// e.POST("/books/", CreateBook)
-	// e.GET("/books/", GetBooks)
-	// e.GET("/books/:id", GetBook)
-	// e.PUT("/books/:id", UpdateBook)
-	// e.DELETE("/books/:id", DeleteBook)
-	// e.Start(":8080")
+func CreateBook(c echo.Context) error {
+	book := Book{}
+	if err := c.Bind(&book); err != nil {
+		return c.String(http.StatusInternalServerError, "Internal Server Error")
+	}
+	if err := DB.Save(&book).Error; err != nil {
+		return c.String(http.StatusInternalServerError, "Internal Sever Error")
+	}
+	return c.JSON(http.StatusOK, book)
 }
 
-func SecretHandler(c echo.Context) error {
-	token := c.Get("user").(*jwt.Token)
-	claims := token.Claims.(jwt.MapClaims)
-	username := claims["username"].(string)
-	// select * from order where id=username
-	return c.String(http.StatusOK, "Hello, "+username)
+func bookhandler() {
+	e := echo.New()
+	e.POST("/books/", CreateBook, middleware.JWT([]byte(secretJwt)))
+	e.GET("/books/", GetBooks, middleware.JWT([]byte(secretJwt)))
+	e.GET("/books/:id", GetBook)
+	e.PUT("/books/:id", UpdateBook)
+	e.DELETE("/books/:id", DeleteBook)
+	// e.Start(":8080")
 }
 
 func CreateJwtToken(username string) (string, error) {
