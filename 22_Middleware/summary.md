@@ -1,5 +1,12 @@
-Database adalah kumpulan informadi yang disimpan di dalam komputer secara sistematik sehingga dapat diperiksa menggunakan suatu program komputer untuk memperoleh informasi dari basis data tersebut. Kegunaan utama sistem basis data adalah agar pemakai mampu menyusun suatu pandangan (view) abstraksi data.
+Middleware khususnya di dunia web programming adalah suatu software layer yang berada di antara router dengan controller. Karena posisi dari middleware berada di antara router dengan controller, fungsi dari middleware rata — rata memiliki fungsi generik, yaitu :
 
-DDL adalah Data Definition Language, yaitu sebuah bahasa pemrograman komputer yang digunakan untuk membuat dan memodifikasi struktur sebuah objek database di database terutama dalam bentuk skema.
+1.Authentication
+2.Authorization
+3.Validasi input
+4.Sanitasi input
+5.Response handler
+6.Data logger
 
-DML adalah bahasa basis data yang dipergunakan untuk melakukan modifikasi dan retrieve (pengambilan) data pada suatu basis data.
+tujuan utama dari adanya middleware adalah agar controller fokus dalam menyelesaikan logika alur bisnis dari suatu flow aplikasi tanpa harus untuk melakukan hal — hal di luar itu seperti validasi input untuk setiap flow. Jadi ketika data yang masuk ke controller sudah dalam keadaan bersih dan sudah siap untuk diproses sesuai dengan alur bisnis dari aplikasi tersebut. Dan dengan adanya middleware, kode kita pastinya lebih reusable, maintainable dan readable.
+
+Contohnya seperti ini, misal kita melakukan authentication, jika lokasi kode auth atau modul masih dipasang di controller, pastinya akan repot jika kita cek satu per satu ke setiap controller jika ada kesalahan atau bug. Belum lagi readibility-nya tentu berkurang. Lebih mudah kita menjadikan authentication tersebut menjadi modul middleware. Dan memasangnya pada route agar lebih mudah untuk dicek. Tapi tentu saja aturan ini tidak semuanya berlaku, karena masing — masing framework mempunyai aturan — aturan tersendiri.
