@@ -1,5 +1,9 @@
-Database adalah kumpulan informadi yang disimpan di dalam komputer secara sistematik sehingga dapat diperiksa menggunakan suatu program komputer untuk memperoleh informasi dari basis data tersebut. Kegunaan utama sistem basis data adalah agar pemakai mampu menyusun suatu pandangan (view) abstraksi data.
+Unit testing dilakukan untuk memastikan bahwa setiap unit kode software sudah bisa bekerja sesuai harapan.
 
-DDL adalah Data Definition Language, yaitu sebuah bahasa pemrograman komputer yang digunakan untuk membuat dan memodifikasi struktur sebuah objek database di database terutama dalam bentuk skema.
+Unit testing penting karena:
+1.membantu memperbaiki bug di awal siklus software development dan menghemat biaya
+2.membantu developer untuk memahami basis kode dan memungkinkan mereka membuat perubahan dengan cepat
+3.berfungsi sebagai dokumentasi proyek
+4.membantu penggunaan kembali kode pada proyek yang baru
 
-DML adalah bahasa basis data yang dipergunakan untuk melakukan modifikasi dan retrieve (pengambilan) data pada suatu basis data.
+
