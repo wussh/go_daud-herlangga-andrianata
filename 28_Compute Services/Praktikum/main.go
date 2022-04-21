@@ -9,5 +9,5 @@ func main() {
 	config.Connect()
 
 	e := routes.New()
-	e.Logger.Fatal(e.Start(":1234"))
+	e.Logger.Fatal(e.Start(":8080"))
 }
