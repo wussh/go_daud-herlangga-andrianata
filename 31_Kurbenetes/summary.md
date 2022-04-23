@@ -1,5 +1,13 @@
-Database adalah kumpulan informadi yang disimpan di dalam komputer secara sistematik sehingga dapat diperiksa menggunakan suatu program komputer untuk memperoleh informasi dari basis data tersebut. Kegunaan utama sistem basis data adalah agar pemakai mampu menyusun suatu pandangan (view) abstraksi data.
+Kubernetes adalah platform open source untuk mengelola kumpulan kontainer dalam suatu cluster server. Platform ini pertama kali dikembangkan oleh Google dan kini dikelola oleh Cloud Native Computing Foundation (CNCF) sebagai platform manajemen kontainer yang cukup populer.
 
-DDL adalah Data Definition Language, yaitu sebuah bahasa pemrograman komputer yang digunakan untuk membuat dan memodifikasi struktur sebuah objek database di database terutama dalam bentuk skema.
+Kontainer sendiri adalah environment dengan sumber daya, CPU, dan sistem file untuk satu aplikasi. Jadi, aplikasi tersebut akan memiliki sumber daya sendiri. Keuntungannya, aplikasi jadi tidak mudah mengalami downtime.
 
-DML adalah bahasa basis data yang dipergunakan untuk melakukan modifikasi dan retrieve (pengambilan) data pada suatu basis data.
+Kubernetes memiliki kemampuan untuk melakukan penjadwalan aplikasi, load balancing server dan peningkatan kapasitas kontainer secara otomatis. 
+
+Komponen Kubernetes
+
+Cluster 
+Cluster adalah suatu kelompok berisi server fisik atau VPS untuk menjalankan Kubernetes. Ada dua jenis server yang dibutuhkan, yaitu master node dan worker node. 
+
+Object
+Pod merupakan objek terkecil di dalam cluster kubernetes yang terletak di dalam node. Fungsinya untuk menjalankan docker images yang membentuk sebuah kontainer. 
