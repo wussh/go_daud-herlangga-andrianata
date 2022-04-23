@@ -1,0 +1,1 @@
+Statistic code analysis adalah suatu pengujian koding aplikasi secara assessment, compiling, maupun checking apakah aplikasi tersebut mengalami issues, violations, dan vulnerabilities terhadap serangan atau tidak. Hal ini tentunya mempermudah tim IT dalam melakukan reduce noise, prioritize findings, dan fix defects di dalam bahasa pemrograman.
