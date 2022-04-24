@@ -1,3 +1,3 @@
 ﻿# Link CI/CD
  
-﻿# https://github.com/wussh/CI-CD--greetings.git
+﻿# https://github.com/wussh/TestingCi-CD
